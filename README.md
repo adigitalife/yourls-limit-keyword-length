@@ -1,6 +1,6 @@
 # Limit keyword length in YOURLS
 
-This plugin allows you to limit the number of characters allowed for the custom keyword.
+This plugin limits the number of characters allowed for the custom keyword.
 
 ####Instructions:
 
