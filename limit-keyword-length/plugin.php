@@ -12,7 +12,7 @@ Author URI: http://adigitalife.net/
 yourls_add_filter( 'shunt_add_new_link', 'limit_keyword_length' );
 
 // Check the keyword length and return an error if too long
-function limit_keyword_length( $too_long = false, $url, $keyword ) {
+function limit_keyword_length( $too_long, $url, $keyword ) {
 	$max_keyword_length = 30;
 	$keyword_length = strlen($keyword);
 
@@ -20,7 +20,7 @@ function limit_keyword_length( $too_long = false, $url, $keyword ) {
 		$return['status']   = 'fail';
 		$return['code']     = 'error:keyword';
 		$return['message']  = "Sorry, the keyword is too long. It can't be more than " . $max_keyword_length . " characters.";
-		return yourls_apply_filter( 'add_new_link_keyword_too_long', $return, $url, $keyword, $title );
+		return yourls_apply_filter( 'add_new_link_keyword_too_long', $return );
 	}
 
 	return false;
